@@ -21,18 +21,22 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc =new Scanner(System.in);
         Calculator c=new Calculator();
-        System.out.println("Enter first number");
-        double input1=sc.nextDouble();
-        System.out.println("Enter Second number");
-        double input2= sc.nextDouble();
-        System.out.println("Enter Choice \n 1) Addition \n 2) Subtraction \n 3) Multiplication \n 4) Division");
-        int choice = sc.nextInt();
-        switch (choice){
-            case 1->System.out.println("Addition is " + c.addition(input1, input2));
-            case 2->System.out.println("Subtraction is " + c.subtraction(input1, input2));
-            case 3->System.out.println("Multiplication is " + c.multiplication(input1, input2));
-            case 4->System.out.println("Division is " + c.division(input1, input2));
-            default -> System.out.println("Wrong choice");
-        }
+        do{
+            System.out.println("Enter Choice \n 1) Addition \n 2) Subtraction \n 3) Multiplication \n 4) Division");
+            int choice = sc.nextInt();
+            System.out.println("Enter first number");
+            double input1=sc.nextDouble();
+            System.out.println("Enter Second number");
+            double input2= sc.nextDouble();
+            switch (choice){
+                case 1->System.out.println("Addition is " + c.addition(input1, input2));
+                case 2->System.out.println("Subtraction is " + c.subtraction(input1, input2));
+                case 3->System.out.println("Multiplication is " + c.multiplication(input1, input2));
+                case 4->System.out.println("Division is " + c.division(input1, input2));
+                default -> System.out.println("Wrong choice");
+            }
+            System.out.println("Do you want to perform opration again \n 1)Yes \n 2)No");
+        }while(sc.nextInt()==1);
+        System.out.println("Thank you for visit on DC calculator");
     }
 }
